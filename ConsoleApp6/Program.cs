@@ -33,8 +33,8 @@ namespace ConsoleApp6
        public static bool IsLoginValid(string login)
        {
           Regex regex = new Regex(@"^[A-Za-z0-9_]+$");
-
-          if (regex.IsMatch(login))
+            bool isLengthValid = login.Length < 20;
+            if (regex.IsMatch(login) && isLengthValid)
               return true;
           else
               return false;
